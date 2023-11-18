@@ -63,9 +63,10 @@ public class CatNpc : MonoBehaviour
         uiAnim.anim.SetBool("isOpen",false);
         StartCoroutine(WaitForAnim());
         playerScript.canMove = true;
-        //playerScript.canShoot = true;
+        playerScript.canShoot1 = true;
         //dialogue.index = 0;
         dialogue.index = dialogueIndex2;
+        //GameManager.ContinueGame();
         
     }
     void DialogueButtonCheck(){
@@ -79,7 +80,7 @@ public class CatNpc : MonoBehaviour
         uiAnim.anim.SetBool("isOpen",false);
         StartCoroutine(WaitForAnim());
         playerScript.canMove = true;
-        //playerScript.canShoot = true;
+        playerScript.canShoot1= true;
         dialogueIndex2 = dialogue.index;
         questIndex++;
         GameManager.questStarted = true;
@@ -127,13 +128,13 @@ public class CatNpc : MonoBehaviour
     public void Leave(){
         buttons.SetActive(false);
         playerScript.canMove = true;
-        //playerScript.canShoot = true;
+        playerScript.canShoot1 = true;
     }
     public void LeaveShop(){
         shopAnim.anim.SetBool("isOpen",false);
         buttons.SetActive(false);
         playerScript.canMove = true;
-        //playerScript.canShoot = true;
+        playerScript.canShoot1 = true;
         shopUI.SetActive(false);
         
     }
@@ -148,9 +149,10 @@ public class CatNpc : MonoBehaviour
         if(distance<=minimDis){
             if(Input.GetKeyDown(KeyCode.F)){
                 //DialogueSystem();
+                //GameManager.PauseGame();
                 buttons.SetActive(true);
                 playerScript.canMove = false;
-                //playerScript.canShoot = false;
+                playerScript.canShoot1 = false;
                 
             }
             pressButton.SetActive(true);

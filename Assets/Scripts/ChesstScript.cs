@@ -27,6 +27,14 @@ public class ChesstScript : MonoBehaviour
     public int minGold;
     public int maxGold;
     public int bonusSeeds;
+    public GameObject rockUI;
+    public GameObject stickkUI;
+    public GameObject grassUI;
+    public GameObject ironUI;
+    public GameObject seedUI;
+    public GameObject goldUI;
+    public GameObject image;
+
     
     // Start is called before the first frame update
     void Start()
@@ -58,7 +66,6 @@ public class ChesstScript : MonoBehaviour
             if(showF){
                 pressButton.SetActive(true);
             }
-           
             
                 if(Input.GetKeyDown(KeyCode.F)){
                     anim.SetBool("isOpen",true);
@@ -72,14 +79,16 @@ public class ChesstScript : MonoBehaviour
                     if(isRandom){
                         //inventory.row1[7]+=Random.Range(1,5);
                         GameManager.goldCount+=Random.Range(minGold,maxGold);
+                        ShowUI();
                     }else{
                         inventory.row1[0]+=bonusStone;
-                        inventory.row1[1]+=bonusShroom;
+                        //inventory.row1[1]+=bonusShroom;
                         inventory.row1[2]+=bonusGrass;
                         inventory.row1[3]+=bonusStick;
                         inventory.row1[4]+=bonusIron;
                         inventory.row1[12]+=bonusSeeds;
                         GameManager.goldCount+=bonusGold;
+                        ShowUI();
 
 
                     }
@@ -90,5 +99,43 @@ public class ChesstScript : MonoBehaviour
         }
         
             
+    }
+    public void ShowUI(){
+        if(bonusStone>0){
+            rockUI.SetActive(true);
+            image.SetActive(true);
+        }
+        if(bonusGrass>0){
+            grassUI.SetActive(true);
+            image.SetActive(true);
+        }
+        if(bonusStick>0){
+            stickkUI.SetActive(true);
+            image.SetActive(true);
+        }
+        if(bonusIron>0){
+            ironUI.SetActive(true);
+            image.SetActive(true);
+        }
+        if(bonusSeeds>0){
+            seedUI.SetActive(true);
+            image.SetActive(true);
+        }
+        if(bonusGold>0){
+            goldUI.SetActive(true);
+            image.SetActive(true);
+        }
+        StartCoroutine(HideUI());
+
+    }
+    IEnumerator HideUI(){
+        yield return new WaitForSeconds(1.5f);
+        rockUI.SetActive(false);
+        grassUI.SetActive(false);
+        stickkUI.SetActive(false);
+        seedUI.SetActive(false);
+        ironUI.SetActive(false);
+        goldUI.SetActive(false);
+        image.SetActive(false);
     }
 }

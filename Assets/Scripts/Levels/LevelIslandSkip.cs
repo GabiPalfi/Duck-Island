@@ -28,7 +28,7 @@ public class LevelIslandSkip : MonoBehaviour
                 StartCoroutine(ChangeLevel());
             }
         }else{
-             uiF.SetActive(false);
+            uiF.SetActive(false);
         }
     }
     IEnumerator ChangeLevel(){

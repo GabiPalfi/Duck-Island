@@ -57,12 +57,16 @@ public class EnemyTurretScript : MonoBehaviour
     }
     IEnumerator CooldownSmall(){
         Instantiate(arrow,Pos1.position,Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("BasicArrow");
         yield return new WaitForSeconds(cooldown);
         Instantiate(arrow,Pos2.position,Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("BasicArrow");
         yield return new WaitForSeconds(cooldown);
         Instantiate(arrow,Pos3.position,Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("BasicArrow");
         yield return new WaitForSeconds(cooldown);
         Instantiate(arrow,Pos4.position,Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("BasicArrow");
     }
     void OnTriggerEnter(Collider other) {
         if(other.tag == "LetterBasic"){
@@ -101,5 +105,9 @@ public class EnemyTurretScript : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("BasicEnemyDie");
         yield return new WaitForSeconds(0.03f);
         Destroy(gameObject);
+    }
+    public void JustShoot(){
+        //canShoot=true;
+        StartCoroutine(CooldownSmall());
     }
 }

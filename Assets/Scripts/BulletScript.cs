@@ -55,7 +55,7 @@ public class BulletScript : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.tag=="Rock" || other.tag=="SimpleEnemy"){
+        if(other.tag=="SimpleEnemy"){
             StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
             FindObjectOfType<AudioManager>().Play("BasicInpact");
             if(isFireWork){
@@ -66,19 +66,22 @@ public class BulletScript : MonoBehaviour
                 Instantiate(destroyParticle,transform.position,Quaternion.identity);
             }
         }
-        if(other.tag=="Cliffs"){
-            if(!isRock){
+        if(other.tag=="Cliffs" || other.tag=="Rock"){
+            if(isFireWork){
+                //FindObjectOfType<AudioManager>().Play("BasicInpact");
+                //StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
+                //Instantiate(destroyParticle,transform.position,Quaternion.identity);
+                //Destroy(gameObject);
+            }else{
                 FindObjectOfType<AudioManager>().Play("BasicInpact");
                 StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
                 Instantiate(destroyParticle,transform.position,Quaternion.identity);
                 Destroy(gameObject);
-                
             }
         }
         if(other.tag=="SimpleEnemy"){
             if(PlayerMovement2.dashMaxTokensStatic>PlayerMovement2.dashTokensStatic){
                 PlayerMovement2.dashTokensStatic++;
-               
                 
             } 
             if(isFireWork){

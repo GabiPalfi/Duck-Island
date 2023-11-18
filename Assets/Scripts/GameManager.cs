@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     public static bool isLevel2Complete;
     public static bool level2EnemyDied;
     public static bool island1Unlocked;
+    public static bool island2Unlocked;
     //public static Vector3 playerPosition;
 
 
@@ -85,6 +86,19 @@ public class GameManager : MonoBehaviour
     public static int pumpkinCount;
     public static int carrotCount;
     public static int cornCount;
+
+    [Header("Hats")]
+    public static int cookHat;
+    public static int collageHat;
+    public static int japanHat;
+    public static int cristamsHat;
+    public static int astronautHat;
+    public static int partyHat;
+    public static int fancyHat;
+    public static int soliderHat;
+    public static int vikingHat;
+    public static int mailmanHat;
+
 
     //public static int stoneCount;
     //public static int stoneCount;
@@ -124,6 +138,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Bosses")]
     public static bool isBoss1Defeted;
+    public static bool isBoss2Defeted;
    
     void Start()
     {
@@ -137,12 +152,7 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    // IEnumerator Test(){
-    //     for(int testCount=1;testCount<=300;testCount++){
-    //         yield return new WaitForSeconds(1f);
-    //         Debug.Log(testCount);
-    //     }
-    // }
+   
     public void StartGame(){
         Scene scene = SceneManager.GetActiveScene();
         if(scene.name=="Level 6"){
@@ -151,10 +161,13 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("MainBase");
             level1Index = 0;
         }
-        Debug.Log("hei");
+        if(scene.name=="Level 8"){
+            SceneManager.LoadScene("Level 8");
+        }else{
+            SceneManager.LoadScene("MainBase");
+            level1Index = 0;
+        }
+       
     }
-    // public void DeathScreen(){
-    //     deathUI.SetActive(true);
-    //     Destroy(player,0.5f);
-    // }
+    
 }

@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35d82f1b08b3742b94aa4dc1efe693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifTime: 2
+  lifTime: 1
   speed: 16
   rb: {fileID: 4107193134201420833}
   destroyParticle: {fileID: 5413555532337792541, guid: 53a3f3fd683b12f4ea753c30222a6e4c, type: 3}

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Boss1HealthSlider : MonoBehaviour
 {
     public Slider slider;
+    public int index;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,13 @@ public class Boss1HealthSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = BossBattleScript1.healthBar;
+        if(index==1){
+            slider.value = BossBattleScript1.healthBar;
+        }
+        if(index==2){
+            slider.value = Bos2Script.healthBar;
+        }
+
+        
     }
 }

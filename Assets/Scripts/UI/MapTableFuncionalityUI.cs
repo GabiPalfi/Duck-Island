@@ -8,12 +8,18 @@ public class MapTableFuncionalityUI : MonoBehaviour
 {
     public LoadScreen anim;
     public GameObject skullIslandLocked;
-    public GameObject skullIslandUnlock;
+    public GameObject skullIslandUnlockButton;
     public GameObject skullIslandTravel;
+
+    public GameObject japanIslandLocked;
+    public GameObject japanIslandUnlockButton;
+    public GameObject japanIslandTravel;
+
+    public int index;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.tokenCount=3;
     }
 
     // Update is called once per frame
@@ -21,30 +27,72 @@ public class MapTableFuncionalityUI : MonoBehaviour
     {
         if(GameManager.island1Unlocked){
             skullIslandLocked.SetActive(false);
-            skullIslandUnlock.SetActive(false);
+            skullIslandUnlockButton.SetActive(false);
             skullIslandTravel.SetActive(true);
+            japanIslandUnlockButton.SetActive(true);
+            
         }else{
             skullIslandLocked.SetActive(true);
-            skullIslandUnlock.SetActive(true);
+            skullIslandUnlockButton.SetActive(true);
             skullIslandTravel.SetActive(false);
+            // japanIslandUnlockButton.SetActive(true);
         }
+        if(GameManager.island2Unlocked){
+            japanIslandLocked.SetActive(false);
+            japanIslandUnlockButton.SetActive(false);
+            japanIslandTravel.SetActive(true);
+            
+        }else{
+            japanIslandLocked.SetActive(true);
+            //japanIslandUnlockButton.SetActive(true);
+            japanIslandTravel.SetActive(false);
+            //japanIslandUnlockButton.SetActive(true);
+        }
+
     }
     public void UnlockSkullIsland(){
         if(GameManager.tokenCount>=1){
             GameManager.tokenCount--;
             GameManager.island1Unlocked=true;
             skullIslandLocked.SetActive(false);
-            skullIslandUnlock.SetActive(false);
+            skullIslandUnlockButton.SetActive(false);
             skullIslandTravel.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("ColectResorce");
         }
     }
+    public void UnlockJapanIsland(){
+        if(GameManager.tokenCount>=1 && GameManager.island1Unlocked){
+            GameManager.tokenCount--;
+            GameManager.island2Unlocked=true;
+            japanIslandLocked.SetActive(false);
+            japanIslandUnlockButton.SetActive(false);
+            japanIslandTravel.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("ColectResorce");
+        }
+    }
+
     public void GoToSkullIsland(){
+        index=1;
         anim.EndLevel();
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
+        StartCoroutine(ChangeScene());
+       
+    }
+    public void GoToJapanIsland(){
+        index=2;
+        anim.EndLevel();
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
         StartCoroutine(ChangeScene());
        
     }
     IEnumerator ChangeScene(){
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Level 3");
+        if(index==1){
+            SceneManager.LoadScene("Level 3");
+        }
+        if(index==2){
+            SceneManager.LoadScene("Level 7");
+        }
+        
     }
 }

@@ -115,3 +115,8 @@ MonoBehaviour:
     volume: 0.04
     pitch: 1.05
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: f27681200bdb8364cbe3dc5625f8efb4, type: 3}
+    name: HealthDown
+    volume: 0.057
+    pitch: 0.5
+    source: {fileID: 0}

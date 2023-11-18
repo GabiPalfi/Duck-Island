@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-//using System.Security.Cryptography.X509Certificates;
-//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -16,6 +14,7 @@ public class PlayerMovement2 : MonoBehaviour
     public GameManager gameManager;
     public InventoryScript inventory;
     public GameObject Cam;
+    public GameObject sprintSlider;
 
     [Header("Game Objects")]
     public GameObject bullet;
@@ -66,6 +65,12 @@ public class PlayerMovement2 : MonoBehaviour
     public static int dashTokensStatic;
     public static int dashMaxTokensStatic=3;
     public int dashTokens;
+    public float sprintSpeed;
+    public float basicSpeed;
+    public static float sprintSliderValue;
+    public bool canSprint;
+    private float keyPressStartTime = 0f;
+    private bool keyPressing = false;
     
     
    
@@ -97,6 +102,9 @@ public class PlayerMovement2 : MonoBehaviour
         SetPos();
         StartCoroutine(FixPos());
         StartCoroutine(FixPos2());
+        speed=basicSpeed;
+        sprintSliderValue = 20;
+        //canSprint=true;
         
         
         
@@ -137,7 +145,6 @@ public class PlayerMovement2 : MonoBehaviour
             if(canMove){
                 controler.Move(_direction*speed*Time.deltaTime);
                 //FindObjectOfType<AudioManager>().Play("PlayerWalk");
-                
             }
             // float targetAngle = Mathf.Atan2(direction.x, direction.z)*Mathf.Rad2Deg;
             // transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
@@ -169,6 +176,54 @@ public class PlayerMovement2 : MonoBehaviour
             // }
             
         }
+        if(Input.GetKey(KeyCode.LeftShift)){
+            if(canSprint){
+                sprintSlider.SetActive(true);
+                speed = sprintSpeed;
+                sprintSliderValue-=7.5f * Time.deltaTime;  
+                if (!keyPressing){
+                    keyPressStartTime = Time.time;
+                    keyPressing = true;
+                }
+            }
+            
+        }else{
+            speed = basicSpeed; 
+            if (keyPressing){
+                keyPressing = false;
+                float keyPressDuration = Time.time - keyPressStartTime;
+                //Debug.Log("Time Between Key Presses: " + keyPressDuration);
+                
+            }
+            if(sprintSliderValue<20 && sprintSliderValue>0){
+                StartCoroutine(RechargeSprint());
+            }
+        }
+
+        if(sprintSliderValue<0){
+            canSprint=false;
+            speed = basicSpeed;
+            StartCoroutine(Sprint()); 
+        }
+        
+    }
+    IEnumerator RechargeSprint(){
+        while(sprintSliderValue<=20){
+            sprintSliderValue+=0.01f;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    IEnumerator Sprint(){
+        yield return new WaitForSeconds(2f);
+        while(sprintSliderValue<=10){
+            sprintSliderValue+=0.01f;
+            yield return new WaitForSeconds(0.1f);
+        }
+        if(sprintSliderValue>=10){
+            canSprint=true;
+            // yield return new WaitForSeconds(0.5f);
+            // sprintSlider.SetActive(false);
+        }
         
     }
     IEnumerator WalkSound(){
@@ -177,9 +232,9 @@ public class PlayerMovement2 : MonoBehaviour
     }
     public void Health(){
         staticHealth=currentHealth;
-        if(Input.GetKeyDown(KeyCode.L)){
-            PlayerLoseHealth();
-        }
+        // if(Input.GetKeyDown(KeyCode.L)){
+        //     PlayerLoseHealth();
+        // }
         if(Input.GetKeyDown(KeyCode.K)){
             if(inventory.row1[9]>0 && currentHealth<maxHealth){
                 PlayerGainHealth();
@@ -317,6 +372,7 @@ public class PlayerMovement2 : MonoBehaviour
     public void PlayerLoseHealth(){
         StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
         currentHealth--;
+        FindObjectOfType<AudioManager>().Play("HealthDown");
         if(currentHealth<=0){
             currentHealth = maxHealth;
             gameManager.StartGame();

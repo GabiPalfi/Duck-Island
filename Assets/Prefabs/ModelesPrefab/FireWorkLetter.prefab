@@ -232,6 +232,7 @@ MonoBehaviour:
   gameManager: {fileID: 324330525296804502, guid: 13290757747b68146b0653a6485ce6ec, type: 3}
   colider: {fileID: 714935534935815723}
   isFireWork: 1
+  isRock: 0
 --- !u!136 &714935534935815723
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -247,7 +248,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

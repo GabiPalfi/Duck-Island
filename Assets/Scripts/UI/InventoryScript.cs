@@ -15,6 +15,7 @@ public class InventoryScript : MonoBehaviour
     
     [Header("VariabileBool")]
     public bool isInventoryOpen;
+    public static bool isInventoryOpenStatic;
     
     [Header("Row1")]
     public int[] row1 = new int[6];
@@ -44,6 +45,7 @@ public class InventoryScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         //inventory.SetActive(false);
+        player.canShoot1 = true;
       
 
     }
@@ -83,11 +85,19 @@ public class InventoryScript : MonoBehaviour
             OpenInventory();
            
         }
-        if(isInventoryOpen){
-            player.canShoot1 = false;
-        }else{
-            player.canShoot1=true;
+        if(Input.GetKeyDown(KeyCode.Escape) && isInventoryOpen){
+            anim.SetBool("IsInventoryOpen",false);
+            FindObjectOfType<AudioManager>().Play("Inventory");
+            isInventoryOpen = false;
+            StartCoroutine(Wait());
+            player.canShoot1 = true;
+            //Debug.Log("Am inchis");
         }
+        // if(isInventoryOpen){
+        //     player.canShoot1 = false;
+        // }else{
+        //     player.canShoot1=true;
+        // }
         GameManager.stoneCount = row1[0];
         GameManager.mushroomCount = row1[1];
         GameManager.grassCount = row1[2];
@@ -111,6 +121,9 @@ public class InventoryScript : MonoBehaviour
         GameManager.tomatoCount = row3[1];
         GameManager.pumpkinCount = row3[2];
         GameManager.cornCount = row3[3];
+
+
+        isInventoryOpenStatic=isInventoryOpen;
     }
     public void OpenInventory(){
          if(isInventoryOpen){
@@ -118,13 +131,15 @@ public class InventoryScript : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Inventory");
                 isInventoryOpen = false;
                 StartCoroutine(Wait());
-               
+                //Debug.Log("Am inchis");
+                player.canShoot1 = true;
                
             }else{
+                player.canShoot1 = false;
                 anim.SetBool("IsInventoryOpen",true);
                 FindObjectOfType<AudioManager>().Play("Inventory");
                 isInventoryOpen = true;
-                
+                //Debug.Log("Am descis");
             }
     }
     IEnumerator Wait(){

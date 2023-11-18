@@ -56,7 +56,7 @@ public class FishNpc : MonoBehaviour
         uiAnim.anim.SetBool("isOpen",false);
         StartCoroutine(WaitForAnim());
         playerScript.canMove = true;
-        //playerScript.canShoot = true;
+        playerScript.canShoot1 = true;
         //dialogue.index = 0;
         dialogue.index = dialogueIndex;
         isUiActive=false;
@@ -65,7 +65,7 @@ public class FishNpc : MonoBehaviour
         uiAnim.anim.SetBool("isOpen",false);
         StartCoroutine(WaitForAnim());
         playerScript.canMove = true;
-        //playerScript.canShoot = true;
+        playerScript.canShoot1 = true;
         dialogueIndex = dialogue.index;
         questIndex++;
         GameManager.questStarted = true;
@@ -123,7 +123,7 @@ public class FishNpc : MonoBehaviour
                 //Debug.Log("HEII");
                 uiAnim.anim.SetBool("isOpen",true);
                 playerScript.canMove = false;
-                //playerScript.canShoot = false;
+                playerScript.canShoot1 = false;
             }
             pressButton.SetActive(true);
         }else{
