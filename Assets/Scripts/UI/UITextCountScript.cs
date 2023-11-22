@@ -42,7 +42,13 @@ public class UITextCountScript : MonoBehaviour
                             if(rand==7){
                                 Text.text = inventory.row7[slot].ToString();
                                 value = inventory.row7[slot];
+                            }else{
+                                if(rand==6){
+                                    Text.text = inventory.row6[slot].ToString();
+                                    value = inventory.row6[slot];
                             }
+                            }
+
                         }
                     }
                 }

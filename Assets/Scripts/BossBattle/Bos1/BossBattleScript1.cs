@@ -33,6 +33,8 @@ public class BossBattleScript1 : MonoBehaviour
     public GameObject hitbox;
     public bool canDisableHitbox;
     public GameObject axeHitParticle;
+    public InventoryScript inventory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +122,9 @@ public class BossBattleScript1 : MonoBehaviour
         if(health <=0){
             StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
             Instantiate(deathParticle,transform.position,Quaternion.identity);
+            inventory.row6[0]=1;
+            GameManager.boss1CompleteLetter=1;
+            Debug.Log(GameManager.boss1CompleteLetter);
             slider.SetActive(false);
             border.SetActive(false);
             GameManager.isBoss1Defeted = true;

@@ -70,6 +70,9 @@ public class InspectorScript : MonoBehaviour
 
     public GameObject letterUI;
     public bool isLetterActive;
+
+    public GameObject lifestealUI;
+    public bool isLifestealActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +105,7 @@ public class InspectorScript : MonoBehaviour
             CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
 
         }
     }
@@ -129,6 +133,7 @@ public class InspectorScript : MonoBehaviour
             CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==2){
             CloseRock();
@@ -153,6 +158,7 @@ public class InspectorScript : MonoBehaviour
             CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==3){
             CloseRock();
@@ -177,6 +183,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==4){
             CloseRock();
@@ -201,6 +208,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==5){
             CloseRock();
@@ -222,9 +230,10 @@ public class InspectorScript : MonoBehaviour
             CloseTomatoe();
             ClosePumkin();
             CloseCorn();
-             CloseDash();
+            CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==6){
             CloseRock();
@@ -249,6 +258,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==7){
             CloseRock();
@@ -273,6 +283,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==8){
             CloseRock();
@@ -297,6 +308,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==9){
             CloseRock();
@@ -321,6 +333,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==10){
             CloseRock();
@@ -345,6 +358,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==11){
             CloseRock();
@@ -369,6 +383,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==12){
             CloseRock();
@@ -393,6 +408,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==13){
             CloseRock();
@@ -417,6 +433,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==14){
             CloseRock();
@@ -441,6 +458,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==15){
             CloseRock();
@@ -465,6 +483,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==16){
             CloseRock();
@@ -489,6 +508,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
          if(index==17){
             CloseRock();
@@ -513,6 +533,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==18){
             CloseRock();
@@ -537,6 +558,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }   
         if(index==19){
             CloseRock();
@@ -561,6 +583,7 @@ public class InspectorScript : MonoBehaviour
              CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==20){
             CloseRock();
@@ -585,6 +608,7 @@ public class InspectorScript : MonoBehaviour
             //CloseDash();
             CloseSlash();
             CloseLetter();
+            CloseLifesteal();
         }
         if(index==21){
             CloseRock();
@@ -609,6 +633,7 @@ public class InspectorScript : MonoBehaviour
             CloseDash();
             CloseLetter();
             //CloseSlash();
+            CloseLifesteal();
         }
         if(index==22){
             CloseRock();
@@ -633,6 +658,32 @@ public class InspectorScript : MonoBehaviour
             CloseDash();
             //CloseLetter();
             CloseSlash();
+            CloseLifesteal();
+        }
+        if(index==23){
+            CloseRock();
+            CloseShroom();
+            CloseGrass();
+            CloseWodd();
+            CloseIron();
+            CloseRope();
+            ClosePlank();
+            CloseCoin();
+            CloseFirework();
+            CloseBnadage();
+            ClosePolishRock();
+            CloseGreenShroom();
+            CloseSeed();
+            CloseRockLetter();
+            CloseFireWorkLetter();
+            CloseCarrot();
+            CloseTomatoe();
+            ClosePumkin();
+            CloseCorn();
+            CloseDash();
+            CloseLetter();
+            CloseSlash();
+            //CloseLifesteal();
         }
 
 
@@ -1038,6 +1089,23 @@ public class InspectorScript : MonoBehaviour
     public void CloseLetter(){
         letterUI.SetActive(false);
         isLetterActive=false;
+    }
+
+    public void ShowLifesteal(){
+       if(isLifestealActive){
+            lifestealUI.SetActive(false);
+            isLifestealActive=false;
+        }else{
+            lifestealUI.SetActive(true);
+            isLifestealActive=true;
+        }
+        index=23;
+        CloseAll();
+        FindObjectOfType<AudioManager>().Play("Inventory");
+    }
+    public void CloseLifesteal(){
+        lifestealUI.SetActive(false);
+        isLifestealActive=false;
     }
     
 }

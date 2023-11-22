@@ -13,8 +13,8 @@ public class WeaponSelectorScript : MonoBehaviour
     public GameObject arrow1;
     public GameObject arrow2;
     public GameObject arrow3;
-    public GameObject arrow4;
-    public GameObject arrow5;
+    // public GameObject arrow4;
+    // public GameObject arrow5;
     public bool isOpen;
     // Start is called before the first frame update
     void Start()
@@ -40,15 +40,15 @@ public class WeaponSelectorScript : MonoBehaviour
             anim.SetBool("isOpen",true);
             isOpen = false;
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1)){
+        if(Input.GetKeyDown(KeyCode.Alpha3)){
             // Debug.Log("salut");
             SelectRockLetter();
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2)){
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
             // Debug.Log("salut");
             SelectFireworkLetter();
         }
-        if(Input.GetKeyDown(KeyCode.Alpha3)){
+        if(Input.GetKeyDown(KeyCode.Alpha2)){
             // Debug.Log("salut");
             SelectNormalLetter();
         }
@@ -62,8 +62,8 @@ public class WeaponSelectorScript : MonoBehaviour
             arrow1.SetActive(true);
             arrow2.SetActive(false);
             arrow3.SetActive(false);
-            arrow4.SetActive(false);
-            arrow5.SetActive(false);
+            // arrow4.SetActive(false);
+            // arrow5.SetActive(false);
         }
     }
     public void SelectFireworkLetter(){
@@ -75,8 +75,8 @@ public class WeaponSelectorScript : MonoBehaviour
             arrow2.SetActive(true);
             arrow1.SetActive(false);
             arrow3.SetActive(false);
-            arrow4.SetActive(false);
-            arrow5.SetActive(false);
+            // arrow4.SetActive(false);
+            // arrow5.SetActive(false);
         }
     }
     public void SelectNormalLetter(){
@@ -87,7 +87,7 @@ public class WeaponSelectorScript : MonoBehaviour
         arrow3.SetActive(true);
         arrow2.SetActive(false);
         arrow1.SetActive(false);
-        arrow4.SetActive(false);
-        arrow5.SetActive(false);
+        // arrow4.SetActive(false);
+        // arrow5.SetActive(false);
     }
 }

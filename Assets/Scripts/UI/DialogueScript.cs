@@ -45,6 +45,7 @@ public class DialogueScript : MonoBehaviour
     }
     public void NewLine(){
         index++;
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
         //Debug.Log("Am APASAT");
 
     }

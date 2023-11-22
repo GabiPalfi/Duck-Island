@@ -373,6 +373,7 @@ public class PlayerMovement2 : MonoBehaviour
         StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
         currentHealth--;
         FindObjectOfType<AudioManager>().Play("HealthDown");
+        
         if(currentHealth<=0){
             currentHealth = maxHealth;
             gameManager.StartGame();
@@ -380,22 +381,31 @@ public class PlayerMovement2 : MonoBehaviour
 
 
     }
+    public static void PlayerGainHealthStatic(){
+
+    }
     public void PlayerGainHealth(){
         StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
         currentHealth++;
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
     }
 
     void SetPos(){
         Scene scene = SceneManager.GetActiveScene();
        
         if(GameManager.level1Index==1 && scene.name=="Level 1"){
-            Cam.transform.position = new Vector3(57.48892f,10.54526f,20.13375f);
-            transform.position = new Vector3(57.88593f,2.924171f,30.37102f);
+            Cam.transform.position = new Vector3(57f,10f,20f);
+            transform.position = new Vector3(57f,2f,30f);
             StartCoroutine(FixPos());
         }
         if(GameManager.level1Index==2 && scene.name=="Level 1"){
-            Cam.transform.position = new Vector3(-11.63107f,10.54526f,74.86375f);
-            transform.position = new Vector3(-11.23408f,2.924171f,85.10103f);
+            Cam.transform.position = new Vector3(-11f,10f,74f);
+            transform.position = new Vector3(-11f,2f,85f);
+            StartCoroutine(FixPos());
+        }
+        if(GameManager.gameStarted ==false && scene.name=="MainBase"){
+            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
+            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
             StartCoroutine(FixPos());
         }
         
@@ -405,49 +415,66 @@ public class PlayerMovement2 : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
        
         if(GameManager.level1Index==1 && scene.name=="Level 1"){
-            Cam.transform.position = new Vector3(57.48892f,10.54526f,20.13375f);
-            transform.position = new Vector3(57.88593f,2.924171f,30.37102f);
+            Cam.transform.position = new Vector3(57f,10f,20f);
+            transform.position = new Vector3(57f,2f,30f);
             yield return new WaitForSeconds(0.5f);
-            Cam.transform.position = new Vector3(57.48892f,10.54526f,20.13375f);
-            transform.position = new Vector3(57.88593f,2.924171f,30.37102f);
+            Cam.transform.position = new Vector3(57f,10f,20f);
+            transform.position = new Vector3(57f,2f,30f);
             yield return new WaitForSeconds(0.5f);
-            Cam.transform.position = new Vector3(57.48892f,10.54526f,20.13375f);
-            transform.position = new Vector3(57.88593f,2.924171f,30.37102f);
+            Cam.transform.position = new Vector3(57f,10f,20f);
+            transform.position = new Vector3(57f,2f,30f);
            
         }
         if(GameManager.level1Index==2 && scene.name=="Level 1"){
-            Cam.transform.position = new Vector3(-11.63107f,10.54526f,74.86375f);
-            transform.position = new Vector3(-11.23408f,2.924171f,85.10103f);
+            Cam.transform.position = new Vector3(-11f,10f,74f);
+            transform.position = new Vector3(-11f,2f,85f);
             yield return new WaitForSeconds(0.5f);
-            Cam.transform.position = new Vector3(-11.63107f,10.54526f,74.86375f);
-            transform.position = new Vector3(-11.23408f,2.924171f,85.10103f);
+            Cam.transform.position = new Vector3(-11f,10f,74f);
+            transform.position = new Vector3(-11f,2f,85f);
             yield return new WaitForSeconds(0.5f);
-            Cam.transform.position = new Vector3(-11.63107f,10.54526f,74.86375f);
-            transform.position = new Vector3(-11.23408f,2.924171f,85.10103f);
+            Cam.transform.position = new Vector3(-11f,10f,74f);
+            transform.position = new Vector3(-11f,2f,85f);
+        }
+
+        if(GameManager.gameStarted == false && scene.name=="MainBase"){
+            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
+            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
+            yield return new WaitForSeconds(0.5f);
+            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
+            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
+            
         }
     }
      IEnumerator FixPos2(){
         Scene scene = SceneManager.GetActiveScene();
        
         if(GameManager.level1Index==1 && scene.name=="Level 1"){
-            Cam.transform.position = new Vector3(57.48892f,10.54526f,20.13375f);
-            transform.position = new Vector3(57.88593f,2.924171f,30.37102f);
+            Cam.transform.position = new Vector3(57f,10f,20f);
+            transform.position = new Vector3(57f,2f,30f);
             yield return new WaitForSeconds(0.25f);
-            Cam.transform.position = new Vector3(57.48892f,10.54526f,20.13375f);
-            transform.position = new Vector3(57.88593f,2.924171f,30.37102f);
+            Cam.transform.position = new Vector3(57f,10f,20f);
+            transform.position = new Vector3(57f,2f,30f);
             yield return new WaitForSeconds(0.75f);
-            Cam.transform.position = new Vector3(57.48892f,10.54526f,20.13375f);
-            transform.position = new Vector3(57.88593f,2.924171f,30.37102f);
+            Cam.transform.position = new Vector3(57f,10f,20f);
+            transform.position = new Vector3(57f,2f,30f);
         }
         if(GameManager.level1Index==2 && scene.name=="Level 1"){
-            Cam.transform.position = new Vector3(-11.63107f,10.54526f,74.86375f);
-            transform.position = new Vector3(-11.23408f,2.924171f,85.10103f);
+            Cam.transform.position = new Vector3(-11f,10f,74f);
+            transform.position = new Vector3(-11f,2f,85f);
             yield return new WaitForSeconds(0.25f);
-            Cam.transform.position = new Vector3(-11.63107f,10.54526f,74.86375f);
-            transform.position = new Vector3(-11.23408f,2.924171f,85.10103f);
+            Cam.transform.position = new Vector3(-11f,10f,74f);
+            transform.position = new Vector3(-11f,2f,85f);
             yield return new WaitForSeconds(0.75f);
-            Cam.transform.position = new Vector3(-11.63107f,10.54526f,74.86375f);
-            transform.position = new Vector3(-11.23408f,2.924171f,85.10103f);
+            Cam.transform.position = new Vector3(-11f,10f,74f);
+            transform.position = new Vector3(-11f,2f,85f);
+        }
+        if(GameManager.gameStarted == false && scene.name=="MainBase"){
+            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
+            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
+            yield return new WaitForSeconds(0.5f);
+            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
+            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
+            
         }
     }
 }

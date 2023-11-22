@@ -72,9 +72,13 @@ public class InventoryScript : MonoBehaviour
     
         row2[0] = GameManager.eyeTalisman;
         row2[1] = GameManager.slashTalisman;
+        row2[2] = GameManager.healthTalisman;
         
         row7[0] = GameManager.rockLetterCount;
         row7[1] = GameManager.fireworkLetterCount;
+
+        row6[0] = GameManager.boss1CompleteLetter;
+        row6[1] = GameManager.boss2CompleteLetter;
     }
 
     // Update is called once per frame
@@ -114,6 +118,7 @@ public class InventoryScript : MonoBehaviour
 
         GameManager.eyeTalisman = row2[0];
         GameManager.slashTalisman = row2[1];
+        GameManager.healthTalisman = row2[2];
 
         GameManager.rockLetterCount = row7[0];
         GameManager.fireworkLetterCount = row7[1];
@@ -121,6 +126,9 @@ public class InventoryScript : MonoBehaviour
         GameManager.tomatoCount = row3[1];
         GameManager.pumpkinCount = row3[2];
         GameManager.cornCount = row3[3];
+
+        GameManager.boss1CompleteLetter = row6[0];
+        GameManager.boss2CompleteLetter = row6[1];
 
 
         isInventoryOpenStatic=isInventoryOpen;

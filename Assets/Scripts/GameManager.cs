@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
     public static bool level2EnemyDied;
     public static bool island1Unlocked;
     public static bool island2Unlocked;
+    public static bool isTutorialOver;
+    public static bool isHomeDone;
     //public static Vector3 playerPosition;
 
 
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
     public static int goldCount;
     public static int eyeTalisman;
     public static int slashTalisman;
+    public static int healthTalisman;
     public static int rockLetterCount;
     public static int fireworkLetterCount;
     public static int plankCount;
@@ -86,6 +89,8 @@ public class GameManager : MonoBehaviour
     public static int pumpkinCount;
     public static int carrotCount;
     public static int cornCount;
+    public static int boss1CompleteLetter;
+    public static int boss2CompleteLetter;
 
     [Header("Hats")]
     public static int cookHat;

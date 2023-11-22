@@ -26,6 +26,7 @@ public class ArmorEnemySCript : MonoBehaviour
     public GameObject arrow;
     public Transform arrowPos;
     public float timeBtwAttacks;
+    public bool giveHealthCooldown;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class ArmorEnemySCript : MonoBehaviour
         //rend = GetComponent<Renderer>();
         //rend.sharedMaterial = material[0];
         anim = GetComponent<Animator>();
+        giveHealthCooldown = true;
     }
 
     // Update is called once per frame
@@ -90,6 +92,16 @@ public class ArmorEnemySCript : MonoBehaviour
                 GameManager.goldCount+=Random.Range(1,2);
                 giveGold=false;
             }
+            if(GameManager.healthTalisman>0){
+                if(PlayerMovement2.staticHealth<5){
+                    if(giveHealthCooldown){
+                        FindObjectOfType<PlayerMovement2>().PlayerGainHealth();
+                        giveHealthCooldown = false;
+                    }
+                   
+                }
+            }
+            //Debug.Log("DAMI VIATA");
         }
     }
     void OnTriggerEnter(Collider other) {

@@ -8,6 +8,7 @@ public class Bos2RoomControl : MonoBehaviour
     public GameObject healthSlider;
     public GameObject boosBattle;
     public GameObject music;
+    public GameObject amulet;
     // Start is called before the first frame update
     void Start()
     {

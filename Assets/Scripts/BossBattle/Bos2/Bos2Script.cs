@@ -34,6 +34,8 @@ public class Bos2Script : MonoBehaviour
     public bool canDisableHitbox;
     public GameObject axeHitParticle;
     public HouseUIanim turrets;
+    public GameObject amulet;
+    public InventoryScript inventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -144,6 +146,9 @@ public class Bos2Script : MonoBehaviour
             Instantiate(deathParticle,transform.position,Quaternion.identity);
             slider.SetActive(false);
             border.SetActive(false);
+            amulet.SetActive(true);
+            inventory.row6[1]=1;
+            GameManager.boss2CompleteLetter=1;
             GameManager.isBoss2Defeted = true;
             //StartCoroutine(BeforeDeath());
             Destroy(gameObject);

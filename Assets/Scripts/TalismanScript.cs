@@ -22,6 +22,13 @@ public class TalismanScript : MonoBehaviour
                 gameObject.SetActive(true);
             }
         }
+        if(index==3){
+            if(GameManager.healthTalisman>0){
+                gameObject.SetActive(false);
+            }else{
+                gameObject.SetActive(true);
+            }
+        }
     }
 
     // Update is called once per frame

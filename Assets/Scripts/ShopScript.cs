@@ -14,6 +14,7 @@ public class ShopScript : MonoBehaviour
     public int carrotPrice;
     public int pumpkinPrice;
     public int cornPrice;
+    public int greenPrice;
     
     // Start is called before the first frame update
     void Start()
@@ -104,5 +105,15 @@ public class ShopScript : MonoBehaviour
             inventory.row3[3]--;
             GameManager.goldCount+=cornPrice;
         }
+    }
+    public void SellGreen(){
+        if(inventory.row3[11]>0){
+            FindObjectOfType<AudioManager>().Play("ColectResorce");
+            inventory.row3[11]--;
+            GameManager.goldCount+=greenPrice;
+        }
+    }
+    public void Sound(){
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
     }
 }
