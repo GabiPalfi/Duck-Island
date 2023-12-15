@@ -124,7 +124,7 @@ public class BossBattleScript1 : MonoBehaviour
             Instantiate(deathParticle,transform.position,Quaternion.identity);
             inventory.row6[0]=1;
             GameManager.boss1CompleteLetter=1;
-            Debug.Log(GameManager.boss1CompleteLetter);
+            //Debug.Log(GameManager.boss1CompleteLetter);
             slider.SetActive(false);
             border.SetActive(false);
             GameManager.isBoss1Defeted = true;

@@ -77,12 +77,13 @@ public class BuilldingScript : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        //GameManager.buildIndex=0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(GameManager.buildIndex);
     }
     public void BuildHutt(){
         //Debug.Log("Am loaduit");
@@ -98,6 +99,7 @@ public class BuilldingScript : MonoBehaviour
                 inventory.row1[3]-=house.woodPrice;
                 GameManager.houseHasBeenBought = true;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=1;
 
             }
         }else{
@@ -106,6 +108,7 @@ public class BuilldingScript : MonoBehaviour
             houseSign.SetActive(false);
             houseUI.SetActive(false);
             craftBenchSign.SetActive(true);
+            //GameManager.buildIndex=1;
         }
     }
     public void BuildCraftingBench(){
@@ -122,6 +125,7 @@ public class BuilldingScript : MonoBehaviour
                 inventory.row1[4]-=craftBench.ironPrice;
                 GameManager.craftingBenchHasBeenBought = true;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=2;
 
             }
         }else{
@@ -130,7 +134,9 @@ public class BuilldingScript : MonoBehaviour
             craftBenchUI.SetActive(false);
             if(GameManager.fireHasBeenBought==false){
                 firePlaceSign.SetActive(true);
+                
             }
+            //GameManager.buildIndex=2;
            
         }
     }
@@ -150,12 +156,14 @@ public class BuilldingScript : MonoBehaviour
                 GameManager.fireHasBeenBought = true;
                 GameManager.mapTableUnlock = true;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=3;
             }
         }else{
             firePlaceModel.SetActive(true);
             firePlaceSign.SetActive(false);
             firePlaceUI.SetActive(false);
             mapPlaceSign.SetActive(true);
+            //GameManager.buildIndex=3;
         }
     }
     public void BuildMapTable(){
@@ -174,12 +182,14 @@ public class BuilldingScript : MonoBehaviour
                 GameManager.mapTableHasBeenBought = true;
                 GameManager.mapTableUnlock = false;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=4;
             }
         }else{
             mapPlaceModel.SetActive(true);
             mapPlaceSign.SetActive(false);
             mapPlaceUI.SetActive(false);
             farmSign.SetActive(true);
+            //GameManager.buildIndex=4;
         }
     }
     public void BuildFarm(){
@@ -198,12 +208,14 @@ public class BuilldingScript : MonoBehaviour
                 GameManager.farmHasBeenBought = true;
                 //GameManager.mapTableUnlock = false;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=5;
             }
         }else{
             farmModel.SetActive(true);
             farmSign.SetActive(false);
             farmUI.SetActive(false);
             tileSign.SetActive(true);
+            //GameManager.buildIndex=5;
         }
     }
     public void BuildTile(){
@@ -220,12 +232,14 @@ public class BuilldingScript : MonoBehaviour
                 fenceSign.SetActive(true);
                 //GameManager.mapTableUnlock = false;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=6;
             }
         }else{
             tileModel.SetActive(true);
             tileSign.SetActive(false);
             tileUI.SetActive(false);
             fenceSign.SetActive(true);
+            //GameManager.buildIndex=6;
         }
     }
     public void BuildFence(){
@@ -243,12 +257,14 @@ public class BuilldingScript : MonoBehaviour
                 gateSign.SetActive(true);
                 //GameManager.mapTableUnlock = false;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=7;
             }
         }else{
             fenceModel.SetActive(true);
             fenceSign.SetActive(false);
             fenceUI.SetActive(false);
             gateSign.SetActive(true);
+            //GameManager.buildIndex=7;
         }
     }
     public void BuildGate(){
@@ -266,12 +282,14 @@ public class BuilldingScript : MonoBehaviour
                 flowerPotSign.SetActive(true);
                 //GameManager.mapTableUnlock = false;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=8;
             }
         }else{
             gateModel.SetActive(true);
             gateSign.SetActive(false);
             gateUI.SetActive(false);
             flowerPotSign.SetActive(true);
+            //GameManager.buildIndex=8;
         }
     }
     public void BuildFlowerPot(){
@@ -291,12 +309,14 @@ public class BuilldingScript : MonoBehaviour
                 windmillSign.SetActive(true);
                 //GameManager.mapTableUnlock = false;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=9;
             }
         }else{
             flowerPotModel.SetActive(true);
             flowerPotSign.SetActive(false);
             flowerPotUI.SetActive(false);
             windmillSign.SetActive(true);
+            //GameManager.buildIndex=9;
         }
     }
     public void BuildWindmill(){
@@ -315,11 +335,13 @@ public class BuilldingScript : MonoBehaviour
                 GameManager.windmillHasBeenBought = true;
                 //GameManager.mapTableUnlock = false;
                 FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=10;
             }
         }else{
             windmillModel.SetActive(true);
             windmillSign.SetActive(false);
             windmillUI.SetActive(false);
+            //GameManager.buildIndex=10;
         }
     }
 }

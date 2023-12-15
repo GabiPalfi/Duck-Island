@@ -42,6 +42,8 @@ public class MapTableModelScript : MonoBehaviour
         //isUiOpen=false;
         playerScript.canMove = true;
         // StartCoroutine(WaitASec());
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
+        playerScript.canShoot1=true;
         
         
         

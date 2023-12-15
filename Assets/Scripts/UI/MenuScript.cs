@@ -19,5 +19,12 @@ public class MenuScript : MonoBehaviour
     }
     public void StartGame(){
         SceneManager.LoadScene("MainBase");
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
+    }
+    public void CloseGame(){
+        Application.Quit();
+    }
+    public void Sound(){
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
     }
 }

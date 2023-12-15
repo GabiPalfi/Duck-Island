@@ -16,6 +16,7 @@ public class ArmorEnemySCript : MonoBehaviour
     public GameObject deathParticle;
     public float minDis;
     public bool isWhite;
+    public float whiteDuration = 0.07f;
     public bool hasAwaken;
     public Material[] material;
     Renderer rend;
@@ -138,7 +139,7 @@ public class ArmorEnemySCript : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("BasicArrow");
     }
     IEnumerator ChangeMat(){
-        yield return new WaitForSeconds(0.07f);
+        yield return new WaitForSeconds(whiteDuration);
         isWhite=false;
     }
    

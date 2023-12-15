@@ -34,6 +34,7 @@ public class MapTableScript : MonoBehaviour
                     isUIopen = true;
                     ui.SetActive(true);
                     animScript.anim.SetBool("isOpen",true);
+                    playerScript.canShoot1=false;
                 }
             }
         }else{

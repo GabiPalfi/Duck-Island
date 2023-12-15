@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     public float magnitudeSoft;
 
     [Header("Base")]
+
+    public static int buildIndex;
     public static bool houseHasBeenBought;
     public static bool craftingBenchHasBeenBought;
     public static bool fireHasBeenBought;

@@ -1051,6 +1051,7 @@ MonoBehaviour:
   arrow: {fileID: 0}
   arrowPos: {fileID: 0}
   timeBtwAttacks: 1
+  giveHealthCooldown: 0
 --- !u!1 &5625223966795135193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,14 +1625,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7542390870385534922}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.65903586, y: -0.24900338, z: -0.6654781, w: -0.24659282}
+  m_LocalRotation: {x: -0.51145005, y: 0.4136935, z: 0.68741393, w: 0.30779645}
   m_LocalPosition: {x: -1.4822654, y: -0.54968077, z: 2.0623531}
   m_LocalScale: {x: 22.197203, y: 21.063059, z: 15.536208}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7422785615791601682}
   m_Father: {fileID: 1799517176080150346}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -117.92, y: 106.7, z: 0}
 --- !u!33 &8514270166730894947
 MeshFilter:
   m_ObjectHideFlags: 0

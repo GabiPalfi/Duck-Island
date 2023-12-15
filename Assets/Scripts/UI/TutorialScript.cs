@@ -37,6 +37,7 @@ public class TutorialScript : MonoBehaviour
         player.canMove=true;
         player.canShoot1=true;
         GameManager.isTutorialOver = true;
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
         StartCoroutine(CloseAll());
 
     }

@@ -11,6 +11,7 @@ public class PauseMenuScript : MonoBehaviour
     private Animator anim;
     public PlayerMovement2 player;
     public LoadScreen ui;
+    public GameObject settingsTab;
 
     // Start is called before the first frame update
     void Start()
@@ -56,20 +57,32 @@ public class PauseMenuScript : MonoBehaviour
         anim.SetBool("isOpen",false);
         FindObjectOfType<AudioManager>().Play("Inventory");
         isPauseMenuOpen = false;
+        settingsTab.SetActive(false);
         StartCoroutine(Wait());
         if(InventoryScript.isInventoryOpenStatic==false){
             player.canShoot1 = true;
         }
         player.canMove = true;
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
         //Debug.Log("Am inchis");
     }
     public void MainMenu(){
         ui.EndLevel();
         StartCoroutine(ChangeLevel());
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
         
     }
     IEnumerator ChangeLevel(){
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("MainMenu");
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
+    }
+    public void OpenSettings(){
+        settingsTab.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
+    }
+    public void CloseSettings(){
+        settingsTab.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
     }
 }

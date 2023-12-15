@@ -381,9 +381,6 @@ public class PlayerMovement2 : MonoBehaviour
 
 
     }
-    public static void PlayerGainHealthStatic(){
-
-    }
     public void PlayerGainHealth(){
         StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
         currentHealth++;
