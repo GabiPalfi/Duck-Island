@@ -14,6 +14,7 @@ public class ArrowScript : MonoBehaviour
     public bool hasRotated;
     public float lifetime;
     private Vector3 initialDirection;
+    public Vector3 fixPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class ArrowScript : MonoBehaviour
         //Vector3 v3Force = speed*transform.forward;
         rb = GetComponent<Rigidbody>(); 
         StartCoroutine(Life());
-        initialDirection = (player.position - transform.position).normalized;
+        initialDirection = (player.position - transform.position + fixPos).normalized;
         
     }
 

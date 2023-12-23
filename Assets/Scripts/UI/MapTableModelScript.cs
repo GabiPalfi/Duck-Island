@@ -8,7 +8,7 @@ public class MapTableModelScript : MonoBehaviour
     //public GameObject ui;
     public Transform player;
     public float minDis;
-    public GameObject button;
+    //public GameObject button;
     public PlayerMovement2 playerScript;
     public GameObject ui;
     public HouseUIanim animScript;

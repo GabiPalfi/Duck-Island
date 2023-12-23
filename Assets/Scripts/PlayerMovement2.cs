@@ -376,7 +376,8 @@ public class PlayerMovement2 : MonoBehaviour
         
         if(currentHealth<=0){
             currentHealth = maxHealth;
-            gameManager.StartGame();
+            //gameManager.StartGame();
+            GameManager.playerHasDied = true;
         }
 
 

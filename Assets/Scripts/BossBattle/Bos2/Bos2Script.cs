@@ -106,7 +106,7 @@ public class Bos2Script : MonoBehaviour
         
     }
 
-     void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider other){
         if(other.tag == "LetterBasic"){
             FindObjectOfType<AudioManager>().Play("BasicEnemyInpact");
             FindObjectOfType<AudioManager>().Play("BasicArrow");

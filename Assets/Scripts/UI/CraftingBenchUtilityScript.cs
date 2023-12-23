@@ -25,7 +25,6 @@ public class CraftingBenchUtilityScript : MonoBehaviour
         if(distance<minDis){
             if(GameManager.craftingBenchHasBeenBought){
                 uiF.SetActive(true);
-                
                 if(Input.GetKeyDown(KeyCode.F)){
                     FindObjectOfType<AudioManager>().Play("UIbasicSound");
                     ui.SetActive(true); 
@@ -42,7 +41,7 @@ public class CraftingBenchUtilityScript : MonoBehaviour
                    
                 }
                 if(isUiOpen==true){
-                    if(Input.GetKeyDown(KeyCode.Tab)){
+                    if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape)){
                         animScript.anim.SetBool("IsOpen",false);
                         isUiOpen=false;
                         playerScript.canMove=true;

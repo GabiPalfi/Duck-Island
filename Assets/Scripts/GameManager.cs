@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static Vector3 level1Pos;
     public static bool isLevel1Finish;
     public static bool level2ExitIndex;
+    public static bool playerHasDied;
    
 
 
@@ -62,8 +63,11 @@ public class GameManager : MonoBehaviour
     public static bool level2EnemyDied;
     public static bool island1Unlocked;
     public static bool island2Unlocked;
+    public static bool island3Unlocked;
     public static bool isTutorialOver;
     public static bool isHomeDone;
+
+    public static bool isSoundPaused;
     //public static Vector3 playerPosition;
 
 
@@ -93,6 +97,7 @@ public class GameManager : MonoBehaviour
     public static int cornCount;
     public static int boss1CompleteLetter;
     public static int boss2CompleteLetter;
+    public static int boss3CompleteLetter;
 
     [Header("Hats")]
     public static int cookHat;
@@ -146,12 +151,14 @@ public class GameManager : MonoBehaviour
     [Header("Bosses")]
     public static bool isBoss1Defeted;
     public static bool isBoss2Defeted;
+    public static bool isBoss3Defeted;
    
     void Start()
     {
         //eyeTalisman = localDashActive;
         // StartCoroutine(Test());
-        
+        playerHasDied=false;
+        tokenCount=3;
     }
 
     

@@ -22,6 +22,9 @@ public class Boss1HealthSlider : MonoBehaviour
         if(index==2){
             slider.value = Bos2Script.healthBar;
         }
+        if(index==3){
+            slider.value = Boss3Script.healthBar;
+        }
 
         
     }

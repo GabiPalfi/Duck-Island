@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MapTableFuncionalityUI : MonoBehaviour
 {
     public LoadScreen anim;
+
     public GameObject skullIslandLocked;
     public GameObject skullIslandUnlockButton;
     public GameObject skullIslandTravel;
@@ -14,6 +15,11 @@ public class MapTableFuncionalityUI : MonoBehaviour
     public GameObject japanIslandLocked;
     public GameObject japanIslandUnlockButton;
     public GameObject japanIslandTravel;
+
+    public GameObject corporationIslandLocked;
+    public GameObject corporationIslandUnlockButton;
+    public GameObject corporationIslandTravel;
+
 
     public int index;
     // Start is called before the first frame update
@@ -37,15 +43,30 @@ public class MapTableFuncionalityUI : MonoBehaviour
             skullIslandTravel.SetActive(false);
             // japanIslandUnlockButton.SetActive(true);
         }
+
         if(GameManager.island2Unlocked){
             japanIslandLocked.SetActive(false);
             japanIslandUnlockButton.SetActive(false);
             japanIslandTravel.SetActive(true);
+            corporationIslandUnlockButton.SetActive(true);
             
         }else{
             japanIslandLocked.SetActive(true);
             //japanIslandUnlockButton.SetActive(true);
             japanIslandTravel.SetActive(false);
+            //japanIslandUnlockButton.SetActive(true);
+        }
+
+        if(GameManager.island3Unlocked){
+            corporationIslandLocked.SetActive(false);
+            corporationIslandUnlockButton.SetActive(false);
+            corporationIslandTravel.SetActive(true);
+            //corporationIslandUnlockButton.SetActive(true);
+            
+        }else{
+            corporationIslandLocked.SetActive(true);
+            //japanIslandUnlockButton.SetActive(true);
+            corporationIslandTravel.SetActive(false);
             //japanIslandUnlockButton.SetActive(true);
         }
 
@@ -70,6 +91,16 @@ public class MapTableFuncionalityUI : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("ColectResorce");
         }
     }
+    public void UnlockCorporationIsland(){
+        if(GameManager.tokenCount>=1 && GameManager.island1Unlocked && GameManager.island2Unlocked){
+            GameManager.tokenCount--;
+            GameManager.island3Unlocked=true;
+            // japanIslandLocked.SetActive(false);
+            // japanIslandUnlockButton.SetActive(false);
+            // japanIslandTravel.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("ColectResorce");
+        }
+    }
 
     public void GoToSkullIsland(){
         index=1;
@@ -85,6 +116,14 @@ public class MapTableFuncionalityUI : MonoBehaviour
         StartCoroutine(ChangeScene());
        
     }
+    public void GoToCorporationIsland(){
+        index=3;
+        anim.EndLevel();
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
+        StartCoroutine(ChangeScene());
+       
+    }
+    
     IEnumerator ChangeScene(){
         yield return new WaitForSeconds(0.5f);
         if(index==1){
@@ -92,6 +131,9 @@ public class MapTableFuncionalityUI : MonoBehaviour
         }
         if(index==2){
             SceneManager.LoadScene("Level 7");
+        }
+        if(index==3){
+            SceneManager.LoadScene("Level 9");
         }
         
     }

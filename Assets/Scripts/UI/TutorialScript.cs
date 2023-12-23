@@ -8,6 +8,7 @@ public class TutorialScript : MonoBehaviour
     public GameObject ui;
     public BoxCollider col;
     public PlayerMovement2 player;
+    public bool isOpen;
     
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,16 @@ public class TutorialScript : MonoBehaviour
             col.enabled = false;
             ui.SetActive(false);
         }
+        if(Input.GetKeyDown(KeyCode.Escape)||Input.GetKeyDown(KeyCode.Space)){
+            if(isOpen){
+                Close();
+            }
+        }
     }
     public void OnTriggerEnter(Collider other) {
         if(other.tag=="Player"){
             //ui.SetActive(true);
+            isOpen=true;
             animScript.anim.SetBool("isOpen",true);
             col.enabled = false;
             player.canMove=false;
@@ -33,6 +40,7 @@ public class TutorialScript : MonoBehaviour
         }
     }
     public void Close(){
+        isOpen=false;
         animScript.anim.SetBool("isOpen",false);
         player.canMove=true;
         player.canShoot1=true;

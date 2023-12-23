@@ -81,8 +81,7 @@ public class ArmorEnemySCript : MonoBehaviour
             }
             
         }
-        
-             
+            
         
         if(health <=0){
             StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
