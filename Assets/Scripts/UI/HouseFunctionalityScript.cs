@@ -9,6 +9,7 @@ public class HouseFunctionalityScript : MonoBehaviour
     public float minDis;
     public GameObject gameSaveUI;
     public HouseUIanim animScript;
+    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class HouseFunctionalityScript : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.F)){
                     gameSaveUI.SetActive(true);
                     animScript.anim.SetBool("isOpen",true);
+                    gameManager.SaveData();
                 }
             }
             

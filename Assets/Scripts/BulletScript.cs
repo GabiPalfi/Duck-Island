@@ -57,7 +57,9 @@ public class BulletScript : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.tag=="SimpleEnemy"){
             StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
+
             FindObjectOfType<AudioManager>().Play("BasicInpact");
+
             if(isFireWork){
                 Destroy(gameObject,0.2f);
                 Instantiate(fireWorkParticle,transform.position,Quaternion.identity);
@@ -67,7 +69,7 @@ public class BulletScript : MonoBehaviour
             }
         }
         if(other.tag=="Cliffs" || other.tag=="Rock"){
-            if(isFireWork){
+            if(isFireWork || isRock){
                 //FindObjectOfType<AudioManager>().Play("BasicInpact");
                 //StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
                 //Instantiate(destroyParticle,transform.position,Quaternion.identity);

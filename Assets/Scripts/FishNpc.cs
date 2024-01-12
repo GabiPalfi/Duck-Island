@@ -68,6 +68,7 @@ public class FishNpc : MonoBehaviour
         playerScript.canShoot1 = true;
         dialogueIndex = dialogue.index;
         questIndex++;
+        FindObjectOfType<AudioManager>().Play("ColectResorce");
         GameManager.questStarted = true;
         if(questIndex == 1){
             GameManager.docQuest1IsActive = true; 

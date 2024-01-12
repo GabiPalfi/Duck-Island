@@ -186,4 +186,16 @@ public class GamblingScript : MonoBehaviour
         startButton.SetActive(true);
         tax.SetActive(true);
     }
+    public void SettBid10(){
+        bidCount=10;
+        StartGame();
+    }
+    public void SettBid25(){
+        bidCount=25;
+        StartGame();
+    }
+    public void SettBid50(){
+        bidCount=50;
+        StartGame();
+    }
 }

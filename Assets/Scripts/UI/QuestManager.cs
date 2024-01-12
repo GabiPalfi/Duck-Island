@@ -6,6 +6,7 @@ public class QuestManager : MonoBehaviour
 {
     public GameObject uiFish;
     public GameObject uiCat;
+    public GameObject uiCrow;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,11 @@ public class QuestManager : MonoBehaviour
             uiCat.SetActive(true);
         }else{
             uiCat.SetActive(false);
+        }
+        if(GameManager.crowQuest1IsActive || GameManager.crowQuest2IsActive|| GameManager.crowQuest3IsActive ){
+            uiCrow.SetActive(true);
+        }else{
+            uiCrow.SetActive(false);
         }
         
     }

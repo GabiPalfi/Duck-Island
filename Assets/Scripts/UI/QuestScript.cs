@@ -9,6 +9,7 @@ public class QuestScript : MonoBehaviour
     public bool isFish;
     public bool isCat;
     public bool isBase;
+    public bool isCrow;
     public string[] quests = new string[20];
     public int index;
     // Start is called before the first frame update
@@ -42,6 +43,19 @@ public class QuestScript : MonoBehaviour
                 Text.text = quests[2];
             }
         }
+
+        if(isCrow){
+            if(GameManager.crowQuest1IsActive){
+                Text.text = quests[0];
+            }
+            if(GameManager.crowQuest2IsActive){
+                Text.text = quests[1];
+            }
+            if(GameManager.crowQuest3IsActive){
+                Text.text = quests[2];
+            }
+        }
+
         if(isBase){
             // if(GameManager.buildIndex==0){
             //     Text.text = quests[10];

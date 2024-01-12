@@ -108,7 +108,7 @@ public class ArmorEnemySCript : MonoBehaviour
         if(other.tag == "LetterBasic"){
             FindObjectOfType<AudioManager>().Play("BasicEnemyInpact");
             FindObjectOfType<AudioManager>().Play("ArmorEnemyHit");
-            health-=gameManager.basicLetterDamage;
+            health-=gameManager.basicLetterDamage+GameManager.difficulty;
             StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
             Instantiate(destroyParticle,transform.position,Quaternion.identity);
             isWhite = true;
@@ -117,7 +117,7 @@ public class ArmorEnemySCript : MonoBehaviour
         if(other.tag == "RockLetter"){
             FindObjectOfType<AudioManager>().Play("BasicEnemyInpact");
             FindObjectOfType<AudioManager>().Play("ArmorEnemyHit");
-            health-=gameManager.rockLetterDamage;
+            health-=gameManager.rockLetterDamage+GameManager.difficulty;
             StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
             Instantiate(destroyParticle,transform.position,Quaternion.identity);
             isWhite = true;
@@ -126,7 +126,7 @@ public class ArmorEnemySCript : MonoBehaviour
          if(other.tag == "FireWorkLetter"){
             FindObjectOfType<AudioManager>().Play("BasicEnemyInpact");
             FindObjectOfType<AudioManager>().Play("ArmorEnemyHit");
-            health-=gameManager.fireworkLetterDamage;
+            health-=gameManager.fireworkLetterDamage+GameManager.difficulty;
             StartCoroutine(cameraShake.Shake(gameManager.duration,gameManager.magnitude));
             Instantiate(destroyParticle,transform.position,Quaternion.identity);
             isWhite = true;
