@@ -25,6 +25,7 @@ public class CuscaScript : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.F)){
                     Instantiate(particle,transform.position,Quaternion.identity);
                     GameManager.isTwinSaved=true;
+                    FindObjectOfType<AudioManager>().Play("ColectResorce");
                     Destroy(gameObject,0.1f);
                 }
             }else{

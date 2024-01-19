@@ -13,7 +13,7 @@ public class CrowScript2 : MonoBehaviour
     public GameObject pressButton;
     public GameObject nextButton;
     public GameObject acceptDeclineButtons;
-    public DialogueScript dialogue;
+    public CrowDialogueScript dialogue;
     public int lastIndex;
     public bool hasTalked;
     private Animator anim;
@@ -26,6 +26,7 @@ public class CrowScript2 : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        dialogue.index=0;
     }
 
     // Update is called once per frame
@@ -70,7 +71,7 @@ public class CrowScript2 : MonoBehaviour
         uiAnim.anim.SetBool("isOpen",false);
         StartCoroutine(WaitForAnim());
         //playerScript.canMove = true;
-        playerScript.canShoot1 = true;
+        //playerScript.canShoot1 = true;
     }
     IEnumerator WaitForAnim(){
         yield return new WaitForSeconds(0.3f);

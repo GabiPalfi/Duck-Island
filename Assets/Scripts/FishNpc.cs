@@ -40,7 +40,8 @@ public class FishNpc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogue.index = dialogueIndex;
+        dialogue.index = GameManager.dialogueIndexDoc;
+        questIndex = GameManager.questIndexDoc;
     }
 
     // Update is called once per frame
@@ -50,7 +51,8 @@ public class FishNpc : MonoBehaviour
         MonitorQuest();
         MonitorButtons();
         TakeButton();
-        //CollectQuests();
+        GameManager.dialogueIndexDoc = dialogueIndex;
+        GameManager.questIndexDoc = questIndex;
     }
     public void CloseUI(){
         uiAnim.anim.SetBool("isOpen",false);

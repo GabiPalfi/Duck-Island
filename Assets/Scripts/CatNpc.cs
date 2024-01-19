@@ -41,7 +41,7 @@ public class CatNpc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogue.index = dialogueIndex2;
+        dialogue.index = GameManager.dialogueIndexCat;
         if(GameManager.isTwinSaved){
             twin.SetActive(true);
         }else{
@@ -57,6 +57,8 @@ public class CatNpc : MonoBehaviour
         MonitorButtons();
         TakeButton();
         DialogueButtonCheck();
+        GameManager.dialogueIndexCat = dialogueIndex2;
+        GameManager.questIndexCat = questIndex;
 
     }
     public void CloseUI(){

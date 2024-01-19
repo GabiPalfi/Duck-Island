@@ -80,6 +80,7 @@ public class InventoryScript : MonoBehaviour
         row6[0] = GameManager.boss1CompleteLetter;
         row6[1] = GameManager.boss2CompleteLetter;
         row6[2] = GameManager.boss3CompleteLetter;
+        row6[3] = GameManager.boss4CompleteLetter;
     }
 
     // Update is called once per frame
@@ -131,6 +132,7 @@ public class InventoryScript : MonoBehaviour
         GameManager.boss1CompleteLetter = row6[0];
         GameManager.boss2CompleteLetter = row6[1];
         GameManager.boss3CompleteLetter = row6[2];
+        GameManager.boss4CompleteLetter = row6[3];
 
 
         isInventoryOpenStatic=isInventoryOpen;

@@ -20,7 +20,7 @@ public class DialogueSCript2 : MonoBehaviour
     void Start()
     {
         Text = GetComponent<TextMeshProUGUI>();
-        index = FishNpc.dialogueIndex;
+        index = CatNpc.dialogueIndex2;
     }
 
     // Update is called once per frame

@@ -14,9 +14,9 @@ public class TravelToLastLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.isBoss1Defeted=true;
-        GameManager.isBoss2Defeted=true;;
-        GameManager.isBoss3Defeted=true;
+        // GameManager.isBoss1Defeted=true;
+        // GameManager.isBoss2Defeted=true;;
+        // GameManager.isBoss3Defeted=true;
         // Debug.Log(GameManager.isBoss1Defeted);
         // Debug.Log(GameManager.isBoss2Defeted);
         // Debug.Log(GameManager.isBoss3Defeted);

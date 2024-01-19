@@ -31,6 +31,10 @@ public class DieScreenUi : MonoBehaviour
 
     }
     public void RestartGame(){
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.name=="Last Level"){
+            GameManager.lastLevelDeathCount++;
+        }
         FindObjectOfType<GameManager>().StartGame();
     }
     public void ResetScene(){

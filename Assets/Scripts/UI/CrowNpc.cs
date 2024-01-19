@@ -10,7 +10,7 @@ public class CrowNpc : MonoBehaviour
     public GameObject pressButton;
     public GameObject ui;
     public HouseUIanim uiAnim;
-    public DialogueScript dialogue;
+    public DialogueScript3 dialogue;
     public static int dialogueIndex;
     public static int questIndex;
     public QuestScript uiScript;
@@ -40,7 +40,8 @@ public class CrowNpc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogue.index = dialogueIndex;
+        dialogue.index = GameManager.dialogueIndexCrow;
+        questIndex = GameManager.questIndexCrow;
     }
 
     // Update is called once per frame
@@ -50,13 +51,15 @@ public class CrowNpc : MonoBehaviour
         MonitorQuest();
         MonitorButtons();
         TakeButton();
+        GameManager.dialogueIndexCrow = dialogueIndex;
+        GameManager.questIndexDoc = questIndex;
         //CollectQuests();
 
-        if(Input.GetKeyDown(KeyCode.O)){
-            GameManager.isBoss1Defeted = true;
-            GameManager.isBoss2Defeted = true;
-            GameManager.isBoss3Defeted = true;
-        }
+        // if(Input.GetKeyDown(KeyCode.O)){
+        //     GameManager.isBoss1Defeted = true;
+        //     GameManager.isBoss2Defeted = true;
+        //     GameManager.isBoss3Defeted = true;
+        // }
     }
     public void CloseUI(){
         uiAnim.anim.SetBool("isOpen",false);

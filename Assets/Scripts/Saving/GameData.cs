@@ -121,6 +121,13 @@ public class GameData
     public bool isBoss1Defeted;
     public bool isBoss2Defeted;
     public bool isBoss3Defeted;
+    public int dialogueIndexDoc;
+    public int dialogueIndexCat;
+    public int dialogueIndexCrow;
+    public int questIndexDoc;
+    public int questIndexCat;
+    public int questIndexCrow;
+    
 
 
     // public GameData (GameManager manager){

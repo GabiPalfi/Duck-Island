@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
     public static int boss1CompleteLetter;
     public static int boss2CompleteLetter;
     public static int boss3CompleteLetter;
+    public static int boss4CompleteLetter;
 
     [Header("Hats")]
     public static int cookHat;
@@ -138,6 +139,7 @@ public class GameManager : MonoBehaviour
     public static bool docQuest2IsActive;
     public static bool docQuest3IsActive;
     public static bool hasGivenTokenDoc;
+    public static int dialogueIndexDoc;
 
     [Header("Cat")]
     public static bool catQuest1;
@@ -148,6 +150,8 @@ public class GameManager : MonoBehaviour
     public static bool catQuest3IsActive;
     public static int gooldSpent;
     public static bool isTwinSaved;
+    public static int dialogueIndexCat;
+
 
     [Header("Crow")]
     public static bool crowQuest1;
@@ -158,6 +162,11 @@ public class GameManager : MonoBehaviour
     public static bool crowQuest3IsActive;
     public static bool hasGivenTokenCrow;
     public static bool hasTalkedCrow;
+    public static int dialogueIndexCrow;
+    public static int questIndexDoc;
+    public static int questIndexCat;
+    public static int questIndexCrow;
+
     
 
    
@@ -170,6 +179,8 @@ public class GameManager : MonoBehaviour
     public static bool isBoss1Defeted;
     public static bool isBoss2Defeted;
     public static bool isBoss3Defeted;
+    public static bool isLastBossDefeted;
+    public static int lastLevelDeathCount;
    
     void Start()
     {
@@ -182,7 +193,16 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        
+        // Debug.Log(isBoss1Defeted);
+        // Debug.Log(isBoss2Defeted);
+        // Debug.Log(isBoss3Defeted);
+        // Debug.Log(isLastBossDefeted);
+        // if(Input.GetKeyDown(KeyCode.O)){
+        //     isBoss1Defeted=true;
+        //     isBoss2Defeted=true;
+        //     isBoss3Defeted=true;
+        //     //isLastBossDefeted=true;
+        // }
     }
    
     public void StartGame(){
@@ -199,6 +219,21 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("MainBase");
             level1Index = 0;
         }
+        if(scene.name=="Level 12"){
+            lastLevelDeathCount++;
+            SceneManager.LoadScene("Level 12");
+            
+            
+        }else{
+            SceneManager.LoadScene("MainBase");
+            level1Index = 0;
+        }
+        if(scene.name=="Last Level"){
+            SceneManager.LoadScene("Last Level");
+        }else{
+            SceneManager.LoadScene("MainBase");
+            level1Index = 0;
+        }
         
        
     }
@@ -208,7 +243,7 @@ public class GameManager : MonoBehaviour
         // Initialize the data class
         scriptData = new GameData();
         IsSaveFileExists();
-        Debug.Log(saveFileExists);
+        //Debug.Log(saveFileExists);
     }
 
     public void SaveData()
@@ -323,6 +358,12 @@ public class GameManager : MonoBehaviour
         scriptData.isBoss1Defeted = isBoss1Defeted;
         scriptData.isBoss2Defeted = isBoss2Defeted;
         scriptData.isBoss3Defeted = isBoss3Defeted;
+        scriptData.dialogueIndexDoc = dialogueIndexDoc;
+        scriptData.dialogueIndexCat = dialogueIndexCat;
+        scriptData.dialogueIndexCrow = dialogueIndexCrow;
+        scriptData.questIndexDoc = questIndexDoc;
+        scriptData.questIndexCat = questIndexCat;
+        scriptData.questIndexCrow = questIndexCrow;
 
         // Set other variables as needed
 
@@ -463,6 +504,17 @@ public class GameManager : MonoBehaviour
                     isBoss1Defeted=scriptData.isBoss1Defeted;
                     isBoss2Defeted=scriptData.isBoss2Defeted;
                     isBoss3Defeted=scriptData.isBoss3Defeted;
+                    dialogueIndexDoc = scriptData.dialogueIndexDoc;
+                    dialogueIndexCat = scriptData.dialogueIndexCat;
+                    dialogueIndexCrow = scriptData.dialogueIndexCrow;
+                    hasGivenTokenCrow = scriptData.hasGivenTokenCrow;
+                    hasTalkedCrow = scriptData.hasTalkedCrow;
+                    questIndexDoc = scriptData.questIndexDoc;
+                    questIndexCat = scriptData.questIndexCat;
+                    questIndexCrow = scriptData.questIndexCrow;
+                    crowQuest1IsActive = scriptData.crowQuest1IsActive;
+                    crowQuest2IsActive = scriptData.crowQuest2IsActive;
+                    crowQuest3IsActive = scriptData.crowQuest3IsActive;
                 }
                 catch (SerializationException e)
                 {

@@ -938,7 +938,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 16.65
+    m_StopTime: 17.15
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -2854,15 +2854,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4.866667
-    functionName: CameraShake
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 5.0333333
-    functionName: SoundFire
+    functionName: CameraShake
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -3022,7 +3015,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 16.65
+  - time: 16.733334
+    functionName: CameraShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 17.15
     functionName: FinalBoss
     data: 
     objectReferenceParameter: {fileID: 0}
