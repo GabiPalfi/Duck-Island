@@ -90,6 +90,16 @@ public class QuestScript : MonoBehaviour
             if(GameManager.buildIndex==10){
                 Text.text = quests[9];
             }
+            if(GameManager.buildIndex==11){
+                Text.text = quests[10];
+            }
+            if(GameManager.buildIndex==12){
+                Text.text = quests[11];
+            }
+            if(GameManager.buildIndex==13){
+                Text.text = quests[12];
+            }
+
         }
         
         //Text.text = quests[index];

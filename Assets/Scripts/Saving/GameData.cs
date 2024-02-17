@@ -127,6 +127,19 @@ public class GameData
     public int questIndexDoc;
     public int questIndexCat;
     public int questIndexCrow;
+    public int bodyIndex;
+    public int legsIndex;
+    public int eyesIndex;
+    public int botIndex;
+    public bool wardrobeHasBeenBought;
+    public bool stoneWallHasBeenBought;
+    public bool baseUpgradeHasBeenBought;
+    public int papionIndex;
+    public int cravataIndex;
+    public int pamblicaIndex;
+    public int teacaIndex;
+    public int accesoryIndex;
+    public int hatIndex;
     
 
 

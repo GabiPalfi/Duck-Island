@@ -50,8 +50,17 @@ public class LoadLevel : MonoBehaviour
         if(GameManager.flowerPotHasBeenBought){
             script.BuildFlowerPot();
         }
-         if(GameManager.windmillHasBeenBought){
+        if(GameManager.windmillHasBeenBought){
             script.BuildWindmill();
+        }
+        if(GameManager.wardrobeHasBeenBought){
+            script.BuildWardrobe();
+        }
+        if(GameManager.stoneWallHasBeenBought){
+            script.BuildStoneWall();
+        }
+        if(GameManager.baseUpgradeHasBeenBought){
+            script.BuildBaseUpgrade();
         }
 
        

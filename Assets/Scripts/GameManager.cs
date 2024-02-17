@@ -24,6 +24,16 @@ public class GameManager : MonoBehaviour
     public static bool isLevel1Finish;
     public static bool level2ExitIndex;
     public static bool playerHasDied;
+    public static int bodyIndex = 0;
+    public static int legsIndex = 7;
+    public static int eyesIndex = 9;
+    public static int botIndex = 7;
+    public static int papionIndex = 1;
+    public static int cravataIndex = 1;
+    public static int pamblicaIndex = 1;
+    public static int teacaIndex = 1;
+    public static int accesoryIndex;
+    public static int hatIndex;
    
 
 
@@ -56,6 +66,9 @@ public class GameManager : MonoBehaviour
     public static bool gateHasBeenBought;
     public static bool flowerPotHasBeenBought;
     public static bool windmillHasBeenBought;
+    public static bool wardrobeHasBeenBought;
+    public static bool stoneWallHasBeenBought;
+    public static bool baseUpgradeHasBeenBought;
 
     [Header("Farm")]
     public static bool hasBeenPlanted1;
@@ -364,6 +377,19 @@ public class GameManager : MonoBehaviour
         scriptData.questIndexDoc = questIndexDoc;
         scriptData.questIndexCat = questIndexCat;
         scriptData.questIndexCrow = questIndexCrow;
+        scriptData.bodyIndex = bodyIndex;
+        scriptData.legsIndex = legsIndex;
+        scriptData.eyesIndex = eyesIndex;
+        scriptData.botIndex = botIndex;
+        scriptData.wardrobeHasBeenBought = wardrobeHasBeenBought;
+        scriptData.stoneWallHasBeenBought = stoneWallHasBeenBought;
+        scriptData.baseUpgradeHasBeenBought = baseUpgradeHasBeenBought;
+        scriptData.papionIndex = papionIndex;
+        scriptData.cravataIndex = cravataIndex;
+        scriptData.pamblicaIndex = pamblicaIndex;
+        scriptData.teacaIndex = teacaIndex;
+        scriptData.accesoryIndex = accesoryIndex;
+        scriptData.hatIndex = hatIndex;
 
         // Set other variables as needed
 
@@ -515,6 +541,19 @@ public class GameManager : MonoBehaviour
                     crowQuest1IsActive = scriptData.crowQuest1IsActive;
                     crowQuest2IsActive = scriptData.crowQuest2IsActive;
                     crowQuest3IsActive = scriptData.crowQuest3IsActive;
+                    bodyIndex = scriptData.bodyIndex;
+                    legsIndex = scriptData.legsIndex;
+                    eyesIndex = scriptData.eyesIndex;
+                    botIndex = scriptData.botIndex;
+                    wardrobeHasBeenBought = scriptData.wardrobeHasBeenBought;
+                    stoneWallHasBeenBought = scriptData.stoneWallHasBeenBought;
+                    baseUpgradeHasBeenBought = scriptData.baseUpgradeHasBeenBought;
+                    papionIndex = scriptData.papionIndex;
+                    cravataIndex = scriptData.cravataIndex;
+                    pamblicaIndex = scriptData.pamblicaIndex;
+                    teacaIndex = scriptData.teacaIndex;
+                    accesoryIndex = scriptData.accesoryIndex;
+                    hatIndex = scriptData.hatIndex;
                 }
                 catch (SerializationException e)
                 {

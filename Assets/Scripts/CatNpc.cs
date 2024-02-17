@@ -42,6 +42,7 @@ public class CatNpc : MonoBehaviour
     void Start()
     {
         dialogue.index = GameManager.dialogueIndexCat;
+        questIndex = GameManager.questIndexCat;
         if(GameManager.isTwinSaved){
             twin.SetActive(true);
         }else{
@@ -59,6 +60,7 @@ public class CatNpc : MonoBehaviour
         DialogueButtonCheck();
         GameManager.dialogueIndexCat = dialogueIndex2;
         GameManager.questIndexCat = questIndex;
+        
 
     }
     public void CloseUI(){
@@ -94,15 +96,16 @@ public class CatNpc : MonoBehaviour
                 GameManager.catQuest2IsActive = true;
                 GameManager.catQuest1IsActive = false;
                 uiScript.index=1;
+                inventory.row3[0]-=resourseNecesary2;
+                inventory.row3[1]-=resourseNecesary2;
+                inventory.row3[2]-=resourseNecesary2;
+                inventory.row3[3]-=resourseNecesary2;
             }else{
                 if(questIndex==3){
                     GameManager.catQuest3IsActive = true;
                     GameManager.catQuest2IsActive = false;
                     uiScript.index=2;
-                    inventory.row3[0]-=resourseNecesary2;
-                    inventory.row3[1]-=resourseNecesary2;
-                    inventory.row3[2]-=resourseNecesary2;
-                    inventory.row3[3]-=resourseNecesary2;
+                   
                 }
                 
             }

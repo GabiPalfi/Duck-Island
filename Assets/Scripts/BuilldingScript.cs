@@ -70,6 +70,24 @@ public class BuilldingScript : MonoBehaviour
     public GameObject windmillSign;
     public GameObject windmillUI;
 
+    [Header("Wardrobe")]
+    public WearDrobeSign wardrobePlace;
+    public GameObject wardrobeModel;
+    public GameObject wardrobeSign;
+    public GameObject wardrobeUI;
+
+    [Header("StoneWall")]
+    public StoneWallSign stoneWallPlace;
+    public GameObject stoneWallModel;
+    public GameObject stoneWallSign;
+    public GameObject stoneWallUI;
+
+    [Header("BaseUpgrade")]
+    public BaseUpgradeSign baseUpgradePlace;
+    public GameObject baseUpgradeModel;
+    public GameObject baseUpgradeSign;
+    public GameObject baseUpgradeUI;
+
 
     [Header("Particle")]
     public GameObject particle;
@@ -327,6 +345,7 @@ public class BuilldingScript : MonoBehaviour
                 windmillSign.SetActive(false);
                 windmillUI.SetActive(false);
                 Instantiate(particle,windmillSign.transform.position,Quaternion.identity);
+                wardrobeSign.SetActive(true);
                 //craftBenchSign.SetActive(true);
                 inventory.row1[10]-=windmillPlace.stonePolish;
                 inventory.row1[5]-=windmillPlace.rope;
@@ -341,6 +360,85 @@ public class BuilldingScript : MonoBehaviour
             windmillModel.SetActive(true);
             windmillSign.SetActive(false);
             windmillUI.SetActive(false);
+            wardrobeSign.SetActive(true);
+            //GameManager.buildIndex=10;
+        }
+    }
+    public void BuildWardrobe(){
+        // Debug.Log("AM V");
+        if(GameManager.wardrobeHasBeenBought==false){
+            if(inventory.row1[10]>=wardrobePlace.stonePolish && inventory.row1[5]>=wardrobePlace.rope && inventory.row1[8]>=wardrobePlace.woodPlanks){
+                wardrobeModel.SetActive(true);
+                wardrobeSign.SetActive(false);
+                wardrobeUI.SetActive(false);
+                Instantiate(particle,wardrobeSign.transform.position,Quaternion.identity);
+                stoneWallSign.SetActive(true);
+                //craftBenchSign.SetActive(true);
+                inventory.row1[10]-=wardrobePlace.stonePolish;
+                inventory.row1[5]-=wardrobePlace.rope;
+                inventory.row1[8]-=wardrobePlace.woodPlanks;
+                GameManager.wardrobeHasBeenBought = true;
+                //GameManager.mapTableUnlock = false;
+                FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=11;
+            }
+        }else{
+            wardrobeModel.SetActive(true);
+            wardrobeSign.SetActive(false);
+            wardrobeUI.SetActive(false);
+            //GameManager.buildIndex=10;
+        }
+    }
+    public void BuildStoneWall(){
+        // Debug.Log("AM V");
+        if(GameManager.stoneWallHasBeenBought==false){
+            if(inventory.row1[10]>=stoneWallPlace.stonePolish && inventory.row1[5]>=stoneWallPlace.rope){
+                stoneWallModel.SetActive(true);
+                stoneWallSign.SetActive(false);
+                stoneWallUI.SetActive(false);
+                fenceModel.SetActive(false);
+                Instantiate(particle,stoneWallSign.transform.position,Quaternion.identity);
+                baseUpgradeSign.SetActive(true);
+                //craftBenchSign.SetActive(true);
+                inventory.row1[10]-=stoneWallPlace.stonePolish;
+                inventory.row1[5]-=stoneWallPlace.rope;
+                GameManager.stoneWallHasBeenBought = true;
+                //GameManager.mapTableUnlock = false;
+                FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=12;
+            }
+        }else{
+            stoneWallModel.SetActive(true);
+            stoneWallSign.SetActive(false);
+            stoneWallUI.SetActive(false);
+            fenceModel.SetActive(false);
+            //GameManager.buildIndex=10;
+        }
+    }
+    public void BuildBaseUpgrade(){
+        // Debug.Log("AM V");
+        if(GameManager.baseUpgradeHasBeenBought==false){
+            if(inventory.row1[10]>=baseUpgradePlace.stonePolish && inventory.row1[5]>=baseUpgradePlace.rope && inventory.row1[8]>=baseUpgradePlace.woodPlanks){
+                baseUpgradeModel.SetActive(true);
+                baseUpgradeSign.SetActive(false);
+                baseUpgradeUI.SetActive(false);
+                houseModel.SetActive(false);
+                Instantiate(particle,baseUpgradeSign.transform.position,Quaternion.identity);
+                //stoneWallSign.SetActive(true);
+                //craftBenchSign.SetActive(true);
+                inventory.row1[10]-=baseUpgradePlace.stonePolish;
+                inventory.row1[5]-=baseUpgradePlace.rope;
+                inventory.row1[8]-=baseUpgradePlace.woodPlanks;
+                GameManager.baseUpgradeHasBeenBought = true;
+                //GameManager.mapTableUnlock = false;
+                FindObjectOfType<AudioManager>().Play("ColectResorce");
+                GameManager.buildIndex=13;
+            }
+        }else{
+            baseUpgradeModel.SetActive(true);
+            baseUpgradeSign.SetActive(false);
+            baseUpgradeUI.SetActive(false);
+            houseModel.SetActive(false);
             //GameManager.buildIndex=10;
         }
     }

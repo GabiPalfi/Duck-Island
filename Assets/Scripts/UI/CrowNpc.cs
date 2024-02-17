@@ -52,13 +52,14 @@ public class CrowNpc : MonoBehaviour
         MonitorButtons();
         TakeButton();
         GameManager.dialogueIndexCrow = dialogueIndex;
-        GameManager.questIndexDoc = questIndex;
+        GameManager.questIndexCrow = questIndex;
         //CollectQuests();
 
         // if(Input.GetKeyDown(KeyCode.O)){
         //     GameManager.isBoss1Defeted = true;
         //     GameManager.isBoss2Defeted = true;
         //     GameManager.isBoss3Defeted = true;
+        //     GameManager.isTwinSaved = true;
         // }
     }
     public void CloseUI(){

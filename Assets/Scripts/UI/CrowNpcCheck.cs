@@ -9,7 +9,7 @@ public class CrowNpcCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(GameManager.hasTalkedCrow);
+        //Debug.Log(GameManager.hasTalkedCrow);
         if(index==1){
             if(GameManager.hasTalkedCrow){
                 crow.SetActive(false);

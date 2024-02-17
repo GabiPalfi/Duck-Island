@@ -42,6 +42,7 @@ public class FishNpc : MonoBehaviour
     {
         dialogue.index = GameManager.dialogueIndexDoc;
         questIndex = GameManager.questIndexDoc;
+       
     }
 
     // Update is called once per frame
@@ -53,6 +54,7 @@ public class FishNpc : MonoBehaviour
         TakeButton();
         GameManager.dialogueIndexDoc = dialogueIndex;
         GameManager.questIndexDoc = questIndex;
+        //Debug.Log(GameManager.questIndexDoc);
     }
     public void CloseUI(){
         uiAnim.anim.SetBool("isOpen",false);

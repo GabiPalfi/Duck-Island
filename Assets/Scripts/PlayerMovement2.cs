@@ -435,11 +435,11 @@ public class PlayerMovement2 : MonoBehaviour
         }
 
         if(GameManager.gameStarted == false && scene.name=="MainBase"){
-            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
-            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
+            Cam.transform.position = new Vector3(10.9f,9.8f,-97.8f);
+            transform.position = new Vector3(11.4f,2.3f,-87.6f);
             yield return new WaitForSeconds(0.5f);
-            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
-            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
+            Cam.transform.position = new Vector3(10.9f,9.8f,-97.8f);
+            transform.position = new Vector3(11.4f,2.3f,-87.6f);
             
         }
     }
@@ -467,11 +467,11 @@ public class PlayerMovement2 : MonoBehaviour
             transform.position = new Vector3(-11f,2f,85f);
         }
         if(GameManager.gameStarted == false && scene.name=="MainBase"){
-            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
-            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
+            Cam.transform.position = new Vector3(10.9f,9.8f,-97.8f);
+            transform.position = new Vector3(11.4f,2.3f,-87.6f);
             yield return new WaitForSeconds(0.5f);
-            Cam.transform.position = new Vector3(10.993f,9.897725f,-97.87727f);
-            transform.position = new Vector3(11.39f,2.276636f,-87.64f);
+            Cam.transform.position = new Vector3(10.9f,9.8f,-97.8f);
+            transform.position = new Vector3(11.4f,2.3f,-87.6f);
             
         }
     }

@@ -28,7 +28,7 @@ public class HatScript : MonoBehaviour
         GameManager.soliderHat=1;
         GameManager.vikingHat=1;
         GameManager.mailmanHat=1;
-
+        index = GameManager.hatIndex;
 
 
 
@@ -68,6 +68,7 @@ public class HatScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameManager.hatIndex = index;
         if(HatSelectorScript.index==1){
             CookHat();
             //GameManager.cookHat=1;
