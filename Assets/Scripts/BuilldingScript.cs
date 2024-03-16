@@ -386,6 +386,7 @@ public class BuilldingScript : MonoBehaviour
             wardrobeModel.SetActive(true);
             wardrobeSign.SetActive(false);
             wardrobeUI.SetActive(false);
+            stoneWallSign.SetActive(true);
             //GameManager.buildIndex=10;
         }
     }
@@ -412,6 +413,7 @@ public class BuilldingScript : MonoBehaviour
             stoneWallSign.SetActive(false);
             stoneWallUI.SetActive(false);
             fenceModel.SetActive(false);
+            baseUpgradeSign.SetActive(true);
             //GameManager.buildIndex=10;
         }
     }

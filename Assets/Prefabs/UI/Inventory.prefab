@@ -1864,7 +1864,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lifesteal Talisman heals yourself after killing an enemy.
+  m_text: Lifesteal Talisman heals yourself after killing an enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2127878fe65745f40bc610e17d88fe3a, type: 2}
   m_sharedMaterial: {fileID: -6101035243918937791, guid: 2127878fe65745f40bc610e17d88fe3a, type: 2}
@@ -15010,7 +15010,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Dash Talisman offers the ability to dash after filling up the 3 circles
-    by hitting or killing enemys.
+    by hitting or killing enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2127878fe65745f40bc610e17d88fe3a, type: 2}
   m_sharedMaterial: {fileID: -6101035243918937791, guid: 2127878fe65745f40bc610e17d88fe3a, type: 2}
@@ -16281,7 +16281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Firework letter is a weapon type witch gives more damage and explosdes
+  m_text: The Firework letter is a weapon type which gives more damage and explodes
     doing splash damage.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2127878fe65745f40bc610e17d88fe3a, type: 2}
@@ -28473,8 +28473,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Rock letter is a weapon type witch gives more damage and passes trough
-    shields, very usefull on skull island and when fighting large enemys.
+  m_text: The Rock letter is a weapon type which gives more damage and passes through
+    shields, very useful on skull island and when fighting large enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2127878fe65745f40bc610e17d88fe3a, type: 2}
   m_sharedMaterial: {fileID: -6101035243918937791, guid: 2127878fe65745f40bc610e17d88fe3a, type: 2}
