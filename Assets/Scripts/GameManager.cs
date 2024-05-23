@@ -317,6 +317,7 @@ public class GameManager : MonoBehaviour
         scriptData.fireworkCount = fireworkCount;
         scriptData.goldCount = goldCount;
         scriptData.eyeTalisman = eyeTalisman;
+        scriptData.slashTalisman = slashTalisman;
         scriptData.healthTalisman = healthTalisman;
         scriptData.rockLetterCount = rockLetterCount;
         scriptData.fireworkLetterCount = fireworkLetterCount;
@@ -484,6 +485,7 @@ public class GameManager : MonoBehaviour
                     fireworkCount=scriptData.fireworkCount;
                     goldCount=scriptData.goldCount;
                     eyeTalisman=scriptData.eyeTalisman;
+                    slashTalisman = scriptData.slashTalisman;
                     healthTalisman=scriptData.healthTalisman;
                     rockLetterCount=scriptData.rockLetterCount;
                     fireworkLetterCount=scriptData.fireworkLetterCount;

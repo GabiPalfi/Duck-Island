@@ -12486,7 +12486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571623133678320811, guid: 684caa14ff53b1e41b5f8cf8dd0c475f, type: 3}
       propertyPath: maxHealth
-      value: 25
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2571623133678320811, guid: 684caa14ff53b1e41b5f8cf8dd0c475f, type: 3}
       propertyPath: cameraShake
@@ -18508,7 +18508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1706189681}
   health: 0
-  maxHealth: 150
+  maxHealth: 350
   minimPos: 20
   cameraShake: {fileID: 963194232}
   anim: {fileID: 858919065}
@@ -32073,7 +32073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571623133678320811, guid: 684caa14ff53b1e41b5f8cf8dd0c475f, type: 3}
       propertyPath: maxHealth
-      value: 25
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2571623133678320811, guid: 684caa14ff53b1e41b5f8cf8dd0c475f, type: 3}
       propertyPath: cameraShake

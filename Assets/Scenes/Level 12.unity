@@ -70462,7 +70462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1706189681}
   health: 0
-  maxHealth: 150
+  maxHealth: 250
   minimPos: 50
   cameraShake: {fileID: 963194232}
   anim: {fileID: 919132148783874637}
